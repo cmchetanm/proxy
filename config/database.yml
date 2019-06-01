@@ -20,13 +20,13 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: <%= ENV['PROXY_SERVICE_DATABASE_HOST'] %>
-  username: <%= ENV['PROXY_SERVICE_DATABASE_USERNAME'] %>
-  password: <%= ENV['PROXY_SERVICE_DATABASE_PASSWORD'] %>  
+  host: <%= ENV['PROXY_DATABASE_HOST'] %>
+  username: <%= ENV['PROXY_DATABASE_USERNAME'] %>
+  password: <%= ENV['PROXY_DATABASE_PASSWORD'] %>  
 
 development:
   <<: *default
-  database: "proxy_service_development"
+  database: "proxy_development"
 
 
   # The specified database role being used to connect to postgres.
@@ -61,4 +61,4 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: "proxy_service_test"
+  database: "proxy_test"
