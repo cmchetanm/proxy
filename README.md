@@ -1,25 +1,27 @@
-# README
+lease follow the steps to setup:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1.) Install ruby version 2.5.1
 
-Things you may want to cover:
+2.) Install rails version 5.2.3
 
-* Ruby version
+3.) Install postgresql
 
-* System dependencies
+5.) On the project root directory:
 
-* Configuration
+  a.) Run `bundle install`
 
-* Database creation
+  b.) Run `bundle exec figaro install`
 
-* Database initialization
+  c.) Set ENV variable in `config/application.yml`
+      PROXY_SERVICE_DATABASE_HOST
+	  PROXY_SERVICE_DATABASE_USERNAME
+	  PROXY_SERVICE_DATABASE_PASSWORD
+	  FORWARD_TO_URL
 
-* How to run the test suite
+  d.) Run `rake db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+  e.) run `rake db:migrate`
 
-* Deployment instructions
+  f.) run `rspec spec`
 
-* ...
-# proxy
+6.) run `rails s`
